@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
                 builder: (context, state) {
                   return MaterialApp(
                     debugShowCheckedModeBanner: false,
-                    title: 'Flutter Demo',
+                    title: 'Hotel Reservations',
                     theme: lightTheme,
                     darkTheme: darkTheme,
                     themeMode: ReservationCubit.get(context).themeMode,

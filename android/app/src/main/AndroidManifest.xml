@@ -3,7 +3,7 @@
 
 
     <application
-        android:label="next_solutions"
+        android:label="Hotel Reservations"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
