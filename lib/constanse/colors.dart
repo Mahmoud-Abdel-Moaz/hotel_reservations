@@ -1,0 +1,23 @@
+import 'package:flutter/material.dart';
+
+const lightBackground = Color(0xFFFAFAFA);
+const darkBackground = Color(0xFF171717);
+const azureishWhite = Color(0xFFE0E6F2);
+const darkJungleGreen = Color(0xFF0E1A2D);
+const jasmine = Color(0xFFFFD979);
+const gold = Color(0xFFD4B363);
+const brightGray = Color(0xFFE9E9E9);
+const charlestonGreen = Color(0xFF2D2D2D);
+const spanishGray = Color(0xFF9A9A9A);
+const spanishGrayL = Color(0x661A1A1A);
+const silverSand = Color(0xffC5C5C5);
+const quartz = Color(0xff4C4C4C);
+const bottomSheetColor = Color(0xFF938F93);
+const bottomSheetLight = Colors.white;
+const bottomSheetDark = Color(0xFF2A2A2A);
+const brightGray2 = Color(0xFFEEEEEE);
+const eerieBlack = Color(0xFF1E1E1E);
+const toggleBackgroundDark = Color(0xFF34373D);
+const toggleBackgroundLight = Color(0xFFE3E3E3);
+const toggleBorderDark = Color(0xFF555E6D);
+const toggleBorderLight = Color(0xFF04132B);
