@@ -13,7 +13,7 @@ abstract class ReservationsLocalDataSource {
   Future<Unit> cacheReservations(List<ReservationModel> reservations);
 }
 
-class ReservationsLocalDataSourceImp implements ReservationsLocalDataSource {
+class ReservationsLocalDataSourceImp extends ReservationsLocalDataSource {
   @override
   Future<Unit> cacheReservations(List<ReservationModel> reservations) {
     try {

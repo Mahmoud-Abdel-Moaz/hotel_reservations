@@ -15,8 +15,9 @@ class ReservationsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ColorScheme colorScheme = Theme.of(context).colorScheme;
-    ReservationCubit.get(context).getReservations();
-    List<Reservation>? reservations;
+    ReservationCubit reservationCubit = ReservationCubit.get(context);
+    reservationCubit.getReservations();
+    List<Reservation>? reservations = reservationCubit.reservations;
     return BlocConsumer<ReservationCubit, ReservationState>(
       listener: (context, state) {
         if (state is LoadedReservationsState) {

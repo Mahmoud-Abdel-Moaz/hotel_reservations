@@ -27,18 +27,14 @@ class ReservationRepositoryImp extends ReservationRepository {
         return Right(reservations);
       } on ServerException {
         return Left(ServerFailure());
-      } catch (e) {
-        print('server error $e');
-        return Left(ServerFailure());
+      } on NotAuthorizedException {
+        return Left(NotAuthorizedFailure());
       }
     } else {
       try {
         final reservations = await localDataSource.getCachedReservations();
         return Right(reservations);
       } on EmptyCacheException {
-        return Left(EmptyCacheFailure());
-      } catch (e) {
-        print('cach error $e');
         return Left(EmptyCacheFailure());
       }
     }

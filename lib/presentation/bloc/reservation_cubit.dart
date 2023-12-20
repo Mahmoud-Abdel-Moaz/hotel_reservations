@@ -20,6 +20,8 @@ class ReservationCubit extends Cubit<ReservationState> {
   static ReservationCubit get(context) => BlocProvider.of(context);
   int selectedReservation = -1;
 
+  List<Reservation>? reservations;
+
   ThemeMode themeMode =
       selectedTheme == LIGHT_MODE ? ThemeMode.light : ThemeMode.dark;
   changeThemeMode() {
@@ -44,8 +46,9 @@ class ReservationCubit extends Cubit<ReservationState> {
       Either<Failure, List<Reservation>> either) {
     return either.fold(
       (failure) => ErrorReservationsState(_mapFailureToMessage(failure)),
-      (reservations) {
-        return LoadedReservationsState(reservations);
+      (reservationsList) {
+        reservations = reservationsList;
+        return LoadedReservationsState(reservationsList);
       },
     );
   }

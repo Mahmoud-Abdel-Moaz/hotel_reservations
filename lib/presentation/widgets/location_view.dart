@@ -43,50 +43,51 @@ class LocationView extends StatelessWidget {
         ),
         Container(
           width: double.infinity,
-          height: 110.h,
+          //    height: 110.h,
           color: colorScheme.surface,
-          child: Row(
-            children: [
-              Expanded(
-                  child: Padding(
-                padding: EdgeInsets.symmetric(vertical: 15.h, horizontal: 14.w),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text(
-                      name,
-                      style: Fonts.sFProDisplay(
-                          14.sp, colorScheme.primary, FontWeight.w700),
-                      textScaleFactor: 1,
-                    ),
-                    SizedBox(
-                      height: 12.h,
-                    ),
-                    Expanded(
-                      child: Text(
-                        'Address: $address',
-                        style: Fonts.sFProDisplay(
-                            14.sp, colorScheme.primary, FontWeight.w400),
-                        textScaleFactor: 1,
+          child: IntrinsicHeight(
+            child: Row(
+              children: [
+                Flexible(
+                    flex: 3,
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                          vertical: 15.h, horizontal: 14.w),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            name,
+                            style: Fonts.sFProDisplay(
+                                14.sp, colorScheme.primary, FontWeight.w700),
+                            textScaleFactor: 1,
+                          ),
+                          SizedBox(
+                            height: 12.h,
+                          ),
+                          Text(
+                            'Address: $address',
+                            style: Fonts.sFProDisplay(
+                                14.sp, colorScheme.primary, FontWeight.w400),
+                            textScaleFactor: 1,
+                          ),
+                        ],
                       ),
+                    )),
+                if (lat != null && lng != null)
+                  Flexible(
+                    flex: 1,
+                    child: GoogleMap(
+                      mapType: MapType.normal,
+                      myLocationButtonEnabled: false,
+                      zoomControlsEnabled: false,
+                      initialCameraPosition: initialCameraPosition,
+                      markers: markers.toSet(),
                     ),
-                  ],
-                ),
-              )),
-              if (lat != null && lng != null)
-                SizedBox(
-                  height: 110.h,
-                  width: 100.w,
-                  child: GoogleMap(
-                    mapType: MapType.normal,
-                    myLocationButtonEnabled: false,
-                    zoomControlsEnabled: false,
-                    initialCameraPosition: initialCameraPosition,
-                    markers: markers.toSet(),
                   ),
-                ),
-            ],
+              ],
+            ),
           ),
         ),
       ],
