@@ -33,5 +33,8 @@ jobs:
       - name: Get Flutter dependencies
         run: flutter pub get
 
+      - name: Get test helper mockes
+        run: dart run build_runner build
+
       - name: Run Flutter unit tests
         run: flutter test
