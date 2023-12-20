@@ -4,9 +4,12 @@ on:
   push:
     branches:
       - main      # you can replace 'main' with the name of your branch
+      - master
+
   pull_request:
     branches:
       - main      # you can replace 'main' with the name of your branch
+      - master
 
 jobs:
   test:
