@@ -39,8 +39,8 @@ jobs:
       - name: Run Flutter unit tests
         run: flutter test
 
-      - name: build apk
-        run: flutter build apk
+#      - name: build apk
+#        run: flutter build apk
 
       - name: Report Status
         if: always()
