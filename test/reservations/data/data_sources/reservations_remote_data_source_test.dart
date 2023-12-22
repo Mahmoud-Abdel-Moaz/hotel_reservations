@@ -41,7 +41,7 @@ void main() {
       when(mockHttpClient.get(Uri.parse(userEvents), headers: {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer $token'
-      })).thenAnswer((_) async => http.Response('Not Found', 404));
+      })).thenAnswer((_) async => http.Response('Not Found', 401));
       //act
       final result = reservationsRemoteDataSource.getReservations();
       //assert
