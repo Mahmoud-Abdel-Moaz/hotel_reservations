@@ -20,9 +20,7 @@ class ReservationsRemoteDataSourceImp extends ReservationsRemoteDataSource {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer $token'
     });
-    //  final response = await HttpService.getData(userEvents);
     if (response.statusCode == 200) {
-      //reservations
       List<ReservationModel> reservations = [];
       reservations = (jsonDecode(response.body)['reservations'] as List)
           .map((i) => ReservationModel.fromJson(i))

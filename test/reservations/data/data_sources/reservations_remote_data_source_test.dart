@@ -35,14 +35,13 @@ void main() {
       expect(reservations, isA<List<ReservationModel>>());
     });
 
-    test(
-        'should throw a server exception when the response code is 404 or other',
+    test('should throw a server exception when the response code is 404 ',
         () async {
       //arrange
       when(mockHttpClient.get(Uri.parse(userEvents), headers: {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer $token'
-      })).thenAnswer((_) async => http.Response('Not Found', 401));
+      })).thenAnswer((_) async => http.Response('Not Found', 404));
       //act
       final result = reservationsRemoteDataSource.getReservations();
       //assert
@@ -50,7 +49,7 @@ void main() {
     });
 
     test(
-        'should throw a NotAuthorized exception when the response code is 401 or other',
+        'should throw a NotAuthorized exception when the response code is 401 ',
         () async {
       //arrange
       when(mockHttpClient.get(Uri.parse(userEvents), headers: {
