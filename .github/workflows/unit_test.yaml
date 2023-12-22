@@ -36,8 +36,8 @@ jobs:
       - name: Run Flutter unit tests
         run: flutter test
 
-#      - name: build apk
-#        run: flutter build apk
+      - name: build apk
+        run: flutter build apk
 
       - name: Report Status
         if: always()
@@ -46,7 +46,6 @@ jobs:
           status: ${{ job.status }}
           notification_title: "{workflow} has {status_message}"
           footer: "Linked Repo <{repo_url}|{repo}>"
-          icon_success: ":white_tick:"
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
